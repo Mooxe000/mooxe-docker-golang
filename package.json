@@ -19,8 +19,9 @@
   ],
   "bin": {},
   "scripts": {
-    "build": "docker build -t mooxe/golang .",
-    "rebuild": "docker build --no-cache -t mooxe/golang .",
+    "build": "npm run update; docker build -t mooxe/golang ./dest",
+    "rebuild": "npm run update; docker build --no-cache -t mooxe/golang ./dest",
+    "update": "./update.sh",
     "in": "docker run --name=golang --rm -ti -v `pwd`:/root/golang mooxe/golang /bin/bash",
     "push": "docker push mooxe/golang",
     "test": "echo 'hello'"
