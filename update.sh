@@ -7,13 +7,12 @@ set -e
 rm -rf ${cwd}/dest
 
 root_path='https://raw.githubusercontent.com/docker-library/golang'
-version='1.6'
-sha='3cdd85183c0f3f6608588166410d24260cd8cb2f'
+version='1.8'
 
 mkdir ${cwd}/dest
 
 curl -L -o ${cwd}/dest/Dockerfile \
-  ${root_path}/${sha}/${version}/Dockerfile
+  ${root_path}/master/${version}/Dockerfile
 
 curl -L -o ${cwd}/dest/go-wrapper \
   ${root_path}/master/${version}/go-wrapper
